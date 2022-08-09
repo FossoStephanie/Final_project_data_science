@@ -23,7 +23,7 @@ df = comments[["video_id", "positive_comments", "negative_comments", "Neutral_co
 #input the video we want to analyse
 
 video = st.text_input('Type The VideoID to see the viewer sentiments', 'VideoID') 
-st.write('comments analytic of', video)
+#st.write('comments analytic of', video)
 
 videoid = str(video)
 
@@ -31,32 +31,19 @@ videoid = str(video)
 def ploting_viewer_sent_per_video(videoid):
     
     video = df.loc[df["video_id"] == videoid, :]
-    #st.write(video.info())
-    y1 = video["positive_comments"]
-    y2 = video["negative_comments"]
-    y3 = video["Neutral_comments"]
-    
-   # x = ["positive_comments", "negative_comments", "Neutral_comments"]
-    #y = [video.positive_comments.values, video.negative_comments.values, video.Neutral_comments.values]
-    #data = pd.DataFrame({
-    #'comments_an': y,
-    #'values':x
-    #})
-
    
+    if st.button('click to plot the comments'):
+        fig = video.plot.bar()
+        st.pyplot() 
+    else:
+        
+        st.write("do you want to know how your audience feel about your video?")
     
-    #fig, ax = plt.subplots(figsize=(8,8))
-    
-    #channel = sns.barplot(x='values', y="comments_an", data=data,palette=('flare'), ax=ax)
-    #channel = ax.set(xlabel="number of videos base on the size of the channel", 
-      #               ylabel="top20 Channels with most trending videos", title = "n Channels with more trending videos")
-    
-    #st.pyplot(fig)
     
    
 
 
-#with st.expander("PENGUINS"):
+
  #   st.table(penguins[penguins.species == option])
     
     
@@ -65,13 +52,12 @@ def ploting_viewer_sent_per_video(videoid):
         option = st.selectbox('which type of message do you want?', ('Positive', 'Negative', 'Neutral'))
          ###  Bar Chart using Altair
         
-        fig = video.plot.bar()
-        st.pyplot()
+        
             
         if(option == 'Positive'):
             
             st.write("""
-            # Positive Words Mostly used
+            #### Positive Words Mostly used
             Positive words that are mostly used by viewers that wrote a comment!
             ***
             """)
@@ -96,7 +82,7 @@ def ploting_viewer_sent_per_video(videoid):
         elif(option == 'Negative'):
             
             st.write("""
-            # Negative Words mostly used
+            #### Negative Words mostly used
             Negative words that are mostly used by viewers that wrote a comment!
             ***
             """)
@@ -121,7 +107,7 @@ def ploting_viewer_sent_per_video(videoid):
         elif(option == 'Neutral'):
             
             st.write("""
-            # Neutral Words mostly used
+            #### Neutral Words mostly used
             Neutral words that are mostly used by viewers that wrote a comment!
             ***
             """)
@@ -140,13 +126,14 @@ def ploting_viewer_sent_per_video(videoid):
             plt.show()
             st.pyplot()
             
+            
         else: 
             
              st.write("""
             choose the type of comment you want to see!
             ***
             """)
-    
+       
     return video
 
 #channel_with_more_trending_videos(n)

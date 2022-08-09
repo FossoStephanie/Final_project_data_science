@@ -9,11 +9,11 @@ st.write("""
 # Trending Youtube Videos
 This app will help you analyse your youtube videos to help your videos appeat on the trending list!
 ***
-""") # pour faire une ligne
+""")  # pour faire une ligne
 
 #input the number of channels we want to see
-number = st.number_input('Choose the number of channels with the most videoson trending list')
-st.write('you want the top ', number, "channels")
+number = st.number_input('Choose the top channels with the most videos on trending list!')
+#st.write('you want the top ', number, "channels")
 
 n = int(number)
 
@@ -40,8 +40,13 @@ def channel_with_more_trending_videos(n):
 #channel_with_more_trending_videos(n)
 
 #st.set_page_config(layout="wide") 
-st.header("click the botun below to display the list of the Top trending Channels")
- 
+#st.header("click the botun below to display the list of the Top trending Channels")
+
+st.write("""
+#### click the bottun below to display the list of the Top trending Channels!
+***
+""") 
+
 if st.button('Top Channel on Trending') and n != 0:
     
     popul_channels = channel_with_more_trending_videos(n)

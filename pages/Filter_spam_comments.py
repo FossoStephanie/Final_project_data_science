@@ -38,8 +38,12 @@ def ploting_spam_comments_per_video(videoid):
    
     return video
 
-st.header("Percentage of spam comments")
- 
+st.write("""
+#### Percentage of spam comments
+***
+""")
+
+
 if st.button('Comments'):
     viewer_sentiments = ploting_spam_comments_per_video(videoid)
     #st.text(channel_choise)
