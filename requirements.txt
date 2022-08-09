@@ -16,4 +16,4 @@ seaborn==0.11.2
 
 plotly==5.9.0
 wordninja==2.0.0
-TextBlob ==22.0.3
+TextBlob ==0.17.1
