@@ -43,18 +43,15 @@ def ploting_spam_comments_per_video(videoid):
    # st.pyplot(fig)
     return video
 
-#channel_with_more_trending_videos(n)
-
-#st.set_page_config(layout="wide") 
-
+st.header("Percentage of spam comments")
  
-#st.write("""
-#### How the viewer feel about your videos
-#""")
-#channel_choise = st.selectbox(
- #                     'channel_title',
-  #                    (df.channel_title)
-   #                   )
-viewer_sentiments = ploting_spam_comments_per_video(videoid)
-#st.text(channel_choise)
-st.table(viewer_sentiments)
+if st.button('Comments'):
+    
+    viewer_sentiments = ploting_spam_comments_per_video(videoid)
+    #st.text(channel_choise)
+    st.table(viewer_sentiments)
+
+else:
+     st.write('predict the percentage of Spam comments!')
+
+

@@ -40,15 +40,12 @@ def channel_with_more_trending_videos(n):
 #channel_with_more_trending_videos(n)
 
 #st.set_page_config(layout="wide") 
-st.title("Top Channel with the most trending videos")
+st.header("Display the list of the Top trending Channels")
  
-#st.write("""
-### Top Trending Videos per Channel
-#""")
-#channel_choise = st.selectbox(
- #                     'channel_title',
-  #                    (df.channel_title)
-   #                   )
-popul_channels = channel_with_more_trending_videos(n)
-#st.text(channel_choise)
-st.table(popul_channels)
+if st.button('Top Channel on Trending'):
+    
+    popul_channels = channel_with_more_trending_videos(n)
+    #st.text(channel_choise)
+    st.table(popul_channels)
+else:
+     st.write('Show the the Top trending channels!')
