@@ -20,7 +20,7 @@ df = comments[["video_id", "video_count", "predictions", "perc"]]#.reset_index(i
 
 video = st.text_input('Type The VideoID to view the percentage of spam comments', 'VideoID')
 
-st.write('This is the classifications of the comments of the video', video)
+#st.write('This is the classifications of the comments of the video', video)
 
 videoid = str(video)
 

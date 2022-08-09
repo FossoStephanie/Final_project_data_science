@@ -13,13 +13,13 @@ This app will help you analyse your youtube videos to help your videos appeat on
 
 #input the number of channels we want to see
 number = st.number_input('Choose the number of channels with the most videoson trending list')
-
-st.write('The current number is ', number)
+st.write('you want the top ', number, "channels")
 
 n = int(number)
 
 
-df = pd.read_csv('GBchannels_with_more_the_most_trending_videos.csv')  
+df = pd.read_csv('GBchannels_with_more_the_most_trending_videos.csv') 
+
 
 def channel_with_more_trending_videos(n):
     
@@ -40,9 +40,9 @@ def channel_with_more_trending_videos(n):
 #channel_with_more_trending_videos(n)
 
 #st.set_page_config(layout="wide") 
-st.header("Display the list of the Top trending Channels")
+st.header("click the botun below to display the list of the Top trending Channels")
  
-if st.button('Top Channel on Trending'):
+if st.button('Top Channel on Trending') and n != 0:
     
     popul_channels = channel_with_more_trending_videos(n)
     #st.text(channel_choise)

@@ -22,12 +22,10 @@ df = comments[["video_id", "positive_comments", "negative_comments", "Neutral_co
 #st.dataframe(df.head())
 #input the video we want to analyse
 
-video = st.text_input('Type The VideoID to see the viewer sentiments', 'VideoID')
-
-st.write('comments analytic of the video', video)
+video = st.text_input('Type The VideoID to see the viewer sentiments', 'VideoID') 
+st.write('comments analytic of', video)
 
 videoid = str(video)
-
 
 
 def ploting_viewer_sent_per_video(videoid):
@@ -38,12 +36,12 @@ def ploting_viewer_sent_per_video(videoid):
     y2 = video["negative_comments"]
     y3 = video["Neutral_comments"]
     
-    x = ["positive_comments", "negative_comments", "Neutral_comments"]
-    y = [video.positive_comments.values, video.negative_comments.values, video.Neutral_comments.values]
-    data = pd.DataFrame({
-    'comments_an': y,
-    'values':x
-    })
+   # x = ["positive_comments", "negative_comments", "Neutral_comments"]
+    #y = [video.positive_comments.values, video.negative_comments.values, video.Neutral_comments.values]
+    #data = pd.DataFrame({
+    #'comments_an': y,
+    #'values':x
+    #})
 
    
     
@@ -158,6 +156,7 @@ def ploting_viewer_sent_per_video(videoid):
 st.write("""
 #### How the viewer feel about your videos
 #""")
+
 
 viewer_sentiments = ploting_viewer_sent_per_video(videoid)
 #st.text(channel_choise)

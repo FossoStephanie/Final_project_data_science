@@ -29,7 +29,7 @@ channel_data = pd.DataFrame({
     "category_id": [category_id],
     "channel_title":[channel_title],
     "description": [Description]
-    #"views": [100000]
+    
 })
 category = pd.read_csv("CSV_Files/category_names.csv")
 
@@ -92,7 +92,7 @@ channel_features = df[["category_id", "tags_words", "title_words", "category_nam
 
 #tell once click let do the prediction
 # prediction
-if st.button('Views Prediction'):
+if st.button('Views Prediction') and channel_features.shape[0] != 0:
     
     prediction = loaded_model.predict(channel_features)
     st.write("the channel can have:", prediction, "als views")
