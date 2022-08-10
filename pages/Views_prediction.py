@@ -31,7 +31,7 @@ channel_data = pd.DataFrame({
     "description": [Description]
     
 })
-category = pd.read_csv("CSV_Files/category_names.csv")
+category = pd.read_csv("category_names.csv")
 
 df = pd.merge(channel_data, category)
 
@@ -95,7 +95,7 @@ channel_features = df[["category_id", "tags_words", "title_words", "category_nam
 if st.button('Views Prediction') and channel_features.shape[0] != 0:
     
     prediction = loaded_model.predict(channel_features)
-    st.write("the channel can have between:", prediction - 1765773, " and ", prediction + 1765773, " views")
+    st.write("the channel can have between:", prediction - 2000000, " and ", prediction + 2000000, " views")
 else:
      st.write('predict the views!')
 
