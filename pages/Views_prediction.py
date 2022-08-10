@@ -15,7 +15,7 @@ let us help you predict the number of views you can have on youtube
 
 loaded_model = pickle.load(open('models/trained_pipe_randomforest_views_prediction.sav', 'rb'))
  
-video_id = st.text_input("VideoId")
+#video_id = st.text_input("VideoId")
 tag = st.text_input("Tag")
 title = st.text_input("Title")
 channel_title = st.text_input("Channel_title")
@@ -23,7 +23,7 @@ category_id = st.number_input("Category_id")
 Description = st.text_input("Description")
 
 channel_data = pd.DataFrame({
-    "video_id": [video_id],
+    #"video_id": [video_id],
     "tag": [tag],
     "title": [title],
     "category_id": [category_id],
@@ -78,7 +78,7 @@ df['Analysis_title']= df["polarity_title"].apply(getAnalysis)
 df['Analysis_tags']= df["polarity_tag"].apply(getAnalysis)
 df['Analysis_descrp']= df["polarity_description"].apply(getAnalysis)
 
-df.set_index('video_id')
+#df.set_index('video_id')
 
 channel_features = df[["category_id", "tags_words", "title_words", "category_names",
                     "tag_length",
